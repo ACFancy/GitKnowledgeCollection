@@ -4,7 +4,7 @@
 #### cloneSvn 工程
 ```
 1、打开终端 cd 到你想要 clone 的指定目录
-$git svn clone Svn项目地址 --no-metadata --trunk=trunk/ --branches=branches --tags=tags --authors-file=./userinfo.txt -s 别名
+$git svn clone Svn项目地址 --no-metadata --trunk=trunk/ --branches=branches --tags=tags --authors-file=本地目录下/userinfo.txt -s 别名
 可选值注解：
 -r 可指定开始版本号。
 -s指定clone下来的文件夹名
