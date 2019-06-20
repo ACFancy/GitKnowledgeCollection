@@ -20,6 +20,8 @@ Svn 账户=Git 账户
 ```
 #### 整理分支和 Tag
 ```
+推荐：sourceTree打开看下所有分支，或使用 $git branch -a 查看当前所有的分支确认无误
+下面的方式不推荐：
 clone 完成后原代码就以git方式存在了。现在我们看下这个目录下的分支(git branch -a)、Tag（git tag -l）,Log日志（git log）情况。Tag全部变成以分支存在了。本地默认master分支。所以我们需要对这些分支进行整理下以便更规范的管理
 1，删除不需要的分支
 $rm -Rf .git/refs/你的分支列表中想要删除的分支
@@ -29,7 +31,6 @@ $rm -Rf .git/refs/remotes/tags/
 3, 最后将remote下的分支都移到本地
 $cp -Rf .git/refs/remotes/origin/tags/* .git/refs/heads/
 $rm -Rf .git/refs/remotes/
-note: 也可以将clone好的项目在sourceTree下查看所有分支
 ```
 #### 迁移 到 Git
 ```
