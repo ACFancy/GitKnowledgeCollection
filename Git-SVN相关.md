@@ -1,6 +1,7 @@
 ###项目迁移Svn To Git
 #### 参考
 - [简书svn2git](https://www.jianshu.com/p/c1cbc5b2826b)
+- [CSDN svn2git](https://blog.csdn.net/toopoo/article/details/85260277)
 #### cloneSvn 工程
 ```
 1、打开终端 cd 到你想要 clone 的指定目录
@@ -21,6 +22,20 @@ Svn 账户=Git 账户
 #### 整理分支和 Tag
 ```
 推荐：sourceTree打开看下所有分支，或使用 $git branch -a 查看当前所有的分支确认无误
+新建一个xx.sh文件包含以下内容：
+#!/bin/zsh
+git checkout master ;
+remote=你的origin名称; #origin / svn
+for brname in ` git branch -r | grep $remote | grep -v master | grep -v HEAD | awk '{gsub(/^[^\/]+\//,"",$1); print $1}' `;
+do
+    git branch -D $brname ;
+    git checkout -b $brname $remote/$brname ;
+done ;
+git checkout master
+然后，给该文件执行权限 chmod +x  目录/xx.sh
+执行 sh xx.sh
+后执行 git push 你的remote名称 --all
+
 下面的方式不推荐：
 clone 完成后原代码就以git方式存在了。现在我们看下这个目录下的分支(git branch -a)、Tag（git tag -l）,Log日志（git log）情况。Tag全部变成以分支存在了。本地默认master分支。所以我们需要对这些分支进行整理下以便更规范的管理
 1，删除不需要的分支
