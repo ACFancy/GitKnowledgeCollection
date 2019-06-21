@@ -56,3 +56,9 @@ $git remote add origin 创建的git项目地址
 $git push -u origin --all
 $git push -u origin --tags
 ```
+#### 拉取所有分支
+```
+git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
+git fetch --all
+git pull -all
+```
