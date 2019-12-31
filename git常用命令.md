@@ -33,3 +33,9 @@ git push origin -d <branch name>
 ```
 git clean -fd
 ```
+### git 误删分支恢复方法
+```
+git log -g 找到之前的删掉分支的提交记录（比如commit_xxx）
+git branch recover_branch_name commit_xxx
+git checkout recover_branch_name
+```
