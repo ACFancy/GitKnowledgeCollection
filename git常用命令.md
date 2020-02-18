@@ -39,3 +39,45 @@ git log -g 找到之前的删掉分支的提交记录（比如commit_xxx）
 git branch recover_branch_name commit_xxx
 git checkout recover_branch_name
 ```
+### 设置author和email
+```
+// 设置全局
+git config --global user.name "Author Name"
+git config --global user.email "Author Email"
+
+// 或者设置本地项目库配置
+git config user.name "Author Name"
+git config user.email "Author Email"
+```
+### git修改提交作者和邮箱
+```
+//只需要最近一次提交
+git commit --amend --author="NewAuthor <NewEmail@address.com>"
+
+//如果是多个修改，那么就需要使用到git filter-branch这个工具来做批量修改
+#!/bin/sh
+
+git filter-branch --env-filter '
+
+an="$GIT_AUTHOR_NAME"
+am="$GIT_AUTHOR_EMAIL"
+cn="$GIT_COMMITTER_NAME"
+cm="$GIT_COMMITTER_EMAIL"
+
+if [ "$GIT_COMMITTER_EMAIL" = "[Your Old Email]" ]
+then
+    cn="[Your New Author Name]"
+    cm="[Your New Email]"
+fi
+if [ "$GIT_AUTHOR_EMAIL" = "[Your Old Email]" ]
+then
+    an="[Your New Author Name]"
+    am="[Your New Email]"
+fi
+
+export GIT_AUTHOR_NAME="$an"
+export GIT_AUTHOR_EMAIL="$am"
+export GIT_COMMITTER_NAME="$cn"
+export GIT_COMMITTER_EMAIL="$cm"
+'
+```
