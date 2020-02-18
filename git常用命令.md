@@ -55,6 +55,11 @@ git config user.email "Author Email"
 git commit --amend --author="NewAuthor <NewEmail@address.com>"
 
 //如果是多个修改，那么就需要使用到git filter-branch这个工具来做批量修改
+<1>
+1. git rebase -i HEAD~n 的方式，Pick -> edit, 
+2. 再使用git commit --amend --author="NewAuthor <NewEmail@address.com>"
+3. git rebase --continue 完成操作
+<2>脚本
 #!/bin/sh
 
 git filter-branch --env-filter '
