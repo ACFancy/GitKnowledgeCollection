@@ -39,6 +39,11 @@ git log -g 找到之前的删掉分支的提交记录（比如commit_xxx）
 git branch recover_branch_name commit_xxx
 git checkout recover_branch_name
 ```
+### submodule的使用初始化
+```
+git submodule update --init --recursive
+```
+
 ### 设置author和email
 ```
 // 设置全局
