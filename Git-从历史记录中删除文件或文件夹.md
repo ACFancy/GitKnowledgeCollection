@@ -1,4 +1,8 @@
+# git filter-repo (推荐)
+- [参考地址](https://htmlpreview.github.io/?https://github.com/newren/git-filter-repo/blob/docs/html/git-filter-repo.html#EXAMPLES)
+- [源项目地址](https://github.com/newren/git-filter-repo)
 
+# git filter-branch (不推荐)
 ## step 1:
 ```
 git filter-branch --force --index-filter \
