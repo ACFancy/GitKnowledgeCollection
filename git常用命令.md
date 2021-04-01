@@ -43,7 +43,11 @@ git checkout recover_branch_name
 ```
 git submodule update --init --recursive
 ```
-
+### git 后悔药
+```
+git reflog
+git reset --hard ******
+```
 ### 设置author和email
 ```
 // 设置全局
