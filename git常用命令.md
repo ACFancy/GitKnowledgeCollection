@@ -106,7 +106,4 @@ then
     export GIT_COMMITTER_NAME="$CORRECT_NAME"
     export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL"
 fi' HEAD
-————————————————
-版权声明：本文为CSDN博主「Iron_Ye」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/Iron_Ye/article/details/83747266
 ```
