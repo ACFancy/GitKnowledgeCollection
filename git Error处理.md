@@ -13,3 +13,8 @@
   # --no-rewrite prevents git from applying this to older commits, it creates a single new commit instead.
   # Use -m "commitmessage" to set a commitmessage for that commit.
   ```
+## Git lfs相关
+- 单单修改 .gitattributes文件内容还不够，还需要执行下面的命令行，以更正追踪的文件
+  ```shell
+  git add --renormalize .
+  ```
