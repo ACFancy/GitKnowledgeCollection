@@ -4,6 +4,7 @@
    #Clear the cache and do a hard reset:
      git rm --cached -r .
      git reset --hard
+     git add --renormalize .
    ```
 - Since git lfs 2.5.0, there is a new command available that makes this easier [doc](https://github.com/git-lfs/git-lfs/blob/main/docs/man/git-lfs-migrate.1.ronn#import-no-rewrite)
   ```shell
