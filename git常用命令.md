@@ -43,6 +43,14 @@ git checkout recover_branch_name
 ```
 git submodule update --init --recursive
 ```
+### submoudle 移除
+```
+git submodule deinit <path_to_submodule>
+git rm <path_to_submodule>
+git commit-m "Removed submodule "
+rm -rf .git/modules/<path_to_submodule>
+```
+
 ### git 后悔药
 ```
 git reflog
