@@ -1,6 +1,7 @@
 # git filter-repo (推荐)
 - [文档参考地址](https://htmlpreview.github.io/?https://github.com/newren/git-filter-repo/blob/docs/html/git-filter-repo.html#EXAMPLES)
 - [源项目地址](https://github.com/newren/git-filter-repo)
+- [github 操作文档sample](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository)
 
 # git filter-branch (不推荐)
 ## step 1:
