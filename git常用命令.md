@@ -115,3 +115,10 @@ then
     export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL"
 fi' HEAD
 ```
+### 每个项目的操作和设置
+```
+1. git pull --rebase/git rebase --onto HEAD branch
+2. Fast-forward merge
+3. Encourage Squash commits when merging
+4. Enable &quot;Delete source branch&quot; option by default
+```
