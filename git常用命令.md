@@ -122,3 +122,7 @@ fi' HEAD
 3. Encourage Squash commits when merging
 4. Enable &quot;Delete source branch&quot; option by default
 ```
+### 获取当前分支HEAD commit的8位简短commit号
+```shell
+git rev-parse --short HEAD
+```
